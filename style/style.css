@@ -1,0 +1,136 @@
+/* Tailwind Directives : */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Styles */
+:root {
+  line-height: 1em;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+@layer base {
+  body {
+    @apply bg-cream font-sans min-h-[100svh] flex justify-center items-center selection:bg-soft-red;
+  }
+  main {
+    @apply flex flex-col gap-4 w-full max-w-xs  md:max-w-fit mx-auto;
+  }
+  small {
+    @apply text-cream text-[0.8rem] md:text-xs;
+    line-height: 0.6;
+  }
+  h1 {
+    @apply text-dark-brown text-[1.8rem] font-bold;
+  }
+  h2 {
+    @apply text-dark-brown text-[1.4rem] font-bold;
+  }
+  h3 {
+    @apply text-white  text-[1.4rem] font-semibold;
+  }
+}
+
+@layer components {
+  /* Balance */
+  .balance {
+    @apply bg-soft-red  flex  px-6 py-7 md:py-6 justify-between rounded-xl selection:bg-dark-brown;
+  }
+  .balance-left {
+    @apply flex flex-col gap-4;
+  }
+  .balance-right {
+    @apply flex;
+  }
+  .balance-right img {
+    @apply w-14 md:w-11;
+  }
+
+  /* Spending */
+  .spending {
+    @apply bg-very-pale-orange flex flex-col px-6 py-4 justify-between rounded-xl;
+  }
+  .spending-duration {
+    @apply mt-3 mb-6;
+  }
+
+  /* Chart */
+  .chart {
+    @apply flex justify-between gap-3  md:gap-0;
+  }
+  .chart-object {
+    @apply h-52 md:h-40 w-full flex flex-col;
+  }
+  .chart-tooltip {
+    @apply bg-dark-brown text-[.72rem] font-bold px-1.5 py-2.5 rounded-[.26rem]  my-1.5 mx-auto  transition-opacity duration-300 ease-in-out md:block hidden opacity-0;
+  }
+  .chart-tooltip.show {
+    @apply opacity-100;
+  }
+  .chart-bar {
+    @apply bg-soft-red w-full md:w-3/4 md:mx-auto rounded-sm md:rounded-[.28rem]
+    md:hover:bg-soft-red/80 md:hover:cursor-pointer;
+  }
+
+  .chart-bar.active {
+    @apply bg-cyan md:hover:cursor-pointer md:hover:bg-cyan/70;
+  }
+
+  .chart-day {
+    @apply text-[.66rem] mx-auto text-dark-brown/50 my-2;
+  }
+  .placeholder {
+    @apply flex-1;
+  }
+
+  /* Seperator */
+  .seperator {
+    @apply w-full h-[2px]  bg-cream my-4;
+  }
+
+  /* Summary */
+  .summary {
+    @apply flex h-fit justify-between my-4 items-end;
+  }
+
+  .summary-left {
+    @apply flex flex-col gap-4;
+    line-height: fit;
+  }
+
+  .summary-left small {
+    @apply text-dark-brown/60;
+  }
+  .summary-left h1 {
+    @apply font-bold text-[1.8rem] md:text-[2rem];
+  }
+
+  .summary-right {
+    @apply flex flex-col items-end gap-3 translate-y-1;
+    line-height: 0%;
+  }
+
+  .summary-compared {
+    @apply text-[.8rem] font-bold text-dark-brown;
+  }
+  .summary-period {
+    @apply text-dark-brown/60;
+  }
+}
+
+[x-cloak] {
+  display: none !important;
+}
