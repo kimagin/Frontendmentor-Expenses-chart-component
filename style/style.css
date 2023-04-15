@@ -75,14 +75,14 @@
     @apply h-52 md:h-40 w-full flex flex-col;
   }
   .chart-tooltip {
-    @apply bg-dark-brown text-[.72rem] font-bold px-1.5 py-2.5 rounded-[.26rem]  my-1.5 mx-auto  transition-opacity duration-300 ease-in-out md:block hidden opacity-0;
+    @apply bg-dark-brown text-[.72rem] font-bold px-1.5 py-2.5 rounded-[.26rem]  my-1.5 mx-auto  transition-opacity duration-500 ease-in-out md:block hidden opacity-0;
   }
   .chart-tooltip.show {
     @apply opacity-100;
   }
   .chart-bar {
     @apply bg-soft-red w-full md:w-3/4 md:mx-auto rounded-sm md:rounded-[.28rem]
-    md:hover:bg-soft-red/80 md:hover:cursor-pointer;
+    md:hover:bg-soft-red/80 md:hover:cursor-pointer transition-colors duration-500;
   }
 
   .chart-bar.active {

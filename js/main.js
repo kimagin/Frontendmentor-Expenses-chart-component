@@ -1,6 +1,7 @@
 'use strict'
 
-// import '../style/style.css'
+import '../style/style.css'
+import { timeline } from 'motion'
 
 //ToolBox
 import {
@@ -23,6 +24,25 @@ const initApp = async () => {
   window.Alpine = Alpine
   Alpine.data('data', Data)
   Alpine.start()
+  await delay(100)
+  // const mainAnimation = animate()
+  // mainAnimation.play()
+
+  const sequence = [['main', { opacity: [0, 1], y: [10, 0] }]]
+  select('.chart-bar', 'all').forEach((chart) => {
+    sequence.push([
+      chart,
+      { height: [0, chart.style.height] },
+      {
+        at: '-0.3',
+        duration: 0.4,
+        delay: 0.15,
+        easing: 'ease-out',
+      },
+    ])
+  })
+
+  timeline(sequence)
 }
 
 event(document, 'DOMContentLoaded', initApp)
@@ -41,7 +61,7 @@ function Data() {
     dataBase: null,
 
     async fetchData() {
-      const request = await fetch('../src/data/data.json')
+      const request = await fetch('./data/data.json')
       const data = await request.json()
       return data
     },
@@ -55,14 +75,15 @@ function Data() {
     },
     async setBars(element, item) {
       let high = await this.highestAmount()
-      log((item.amount * 100) / high)
       element.style.height = `${(item.amount * 70) / high}%`
       item.amount === high ? element.classList.add('active') : ''
     },
     handelToolTip(element) {
       const target = element.parentNode.childNodes[3]
       if (target.classList.contains('show')) {
-        target.classList.remove('show')
+        setTimeout(() => {
+          target.classList.remove('show')
+        }, 100)
         return
       }
       target.classList.add('show')
