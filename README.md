@@ -6,7 +6,7 @@ My proposed solution to the [Expenses chart component challenge on Frontend Ment
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Screenshot](#Screenshot)
   - [Links](#links)
 - [Additional Features](#features)
 - [Built with](#built-with)
@@ -46,8 +46,8 @@ In Addition to that, in order to make the project closer to a realistic applicat
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Link](https://www.frontendmentor.io/solutions/expenses-chart-component-json-animation-dynamic-tailwindcss-4B3VBN9QaZ)
+- Live Site URL: [Link](https://fmcharts.netlify.app/)
 
 ## My process
 
