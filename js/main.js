@@ -24,7 +24,7 @@ const initApp = async () => {
   window.Alpine = Alpine
   Alpine.data('data', Data)
   Alpine.start()
-  await delay(100)
+  await delay(500)
   // const mainAnimation = animate()
   // mainAnimation.play()
 
